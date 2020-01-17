@@ -1,8 +1,7 @@
-@import "bourbon";
 @import "vars.scss";
 
 //Load Libs SASS
-@import "app/libs/animate/animate.sass";
+//@import "app/libs/animate/animate.sass";
 
 *::-webkit-input-placeholder {
 	color: #666;
@@ -66,43 +65,6 @@ body textarea:required:valid {
 	}
 }
 
-table.table-api {
-	border-collapse: collapse;
-	width: 100%;
-	font-size: 12px;
-    font-weight: normal;
-    color: #333c4e;
-    tr {
-    	transition: 0.3s;
-    	cursor: pointer;
-    	&:hover {
-    		background: #f3f3f3;
-    		transition: 0.3s;
-    	}
-    	&:nth-child(2n) {
-    		background: #f9f9f9;
-    	}
-    	&.active {
-    		background: #f9f9f9;
-    		.d-none {
-    			display: block !important;
-    		}
-    	}
-    }
-    td {
-    	border: 1px solid #eee;
-    	padding: 5px 8px;
-    	vertical-align: top;
-    	&:first-child {
-    		padding-left: 15px;
-    		width: 200px;
-    	}
-    	&:last-child {
-    		padding-right: 15px;
-    	}
-    }
-}
-
 table.table-api-with-codes {
 	border-collapse: collapse;
 	width: 100%;
@@ -125,7 +87,7 @@ table.table-api-with-codes {
     	padding: 5px 8px;
     	vertical-align: top;
     	&:first-child {
-    		padding: 0px;
+    		padding: 0;
     		width: 100px;
     	}
     	&:last-child {
@@ -167,7 +129,7 @@ table.table-api-with-codes {
     		.nav-item {
     			width: 100%;
     			border: none;
-    			margin: 0px;
+    			margin: 0;
     			.nav-link {
     				background: none;
     				border: none;
@@ -189,11 +151,59 @@ table.table-api-with-codes {
     	}
     	.tab-content {
     		background: none;
-    		padding: 0px;
+    		padding: 0;
     	}
     }
+
+	// fix to nested table
+	table.table-api td {
+		padding: 5px 8px;
+		&:first-child {
+			padding-left: 15px;
+			width: 200px;
+		}
+		&:last-child {
+			padding-right: 15px;
+		}
+	}
 }
 
+table.table-api {
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 12px;
+	font-weight: normal;
+	color: #333c4e;
+	tr {
+		transition: 0.3s;
+		cursor: pointer;
+		&:hover {
+			background: #f3f3f3;
+			transition: 0.3s;
+		}
+		&:nth-child(2n) {
+			background: #f9f9f9;
+		}
+		&.active {
+			background: #f9f9f9;
+			.d-none {
+				display: block !important;
+			}
+		}
+	}
+	td {
+		border: 1px solid #eee;
+		padding: 5px 8px;
+		vertical-align: top;
+		&:first-child {
+			padding-left: 15px;
+			width: 200px;
+		}
+		&:last-child {
+			padding-right: 15px;
+		}
+	}
+}
 
 //ALWAYS END
-@import "media"
+@import "media";

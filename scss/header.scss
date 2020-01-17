@@ -31,11 +31,11 @@ body {
     padding-right: 10px;
     a.logo {
     	display: block;
-    	margin: 0px auto 66px;
+    	margin: 0 auto 66px;
     	img {
     		display: block;
     		max-width: 100%;
-    		margin: 0px auto;
+    		margin: 0 auto;
     	}
     }
     ul.menu {
@@ -64,7 +64,7 @@ body {
 
 .card {
 	background: #fff;
-	border-radius: 0px;
+	border-radius: 0;
 	border: none;
 }
 .card-header {
