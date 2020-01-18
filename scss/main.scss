@@ -31,17 +31,31 @@ body input:required:valid,
 body textarea:required:valid {
 	color: #666
 }
-.color1 {
-	color: $color1;
-}
-.color2 {
+
+.type-string {
 	color: $color2;
 }
-.color3 {
+.type-integer {
 	color: $color3;
 }
-.color4 {
+.type-object, .type-boolean {
 	color: $color4;
+}
+.type-array {
+	color: $color1;
+}
+.type-description {
+	color: $color4;
+}
+
+.http-method-get {
+	color: $color1;
+}
+.http-method-post {
+	color: $color2;
+}
+.http-method-delete {
+	color: $color3;
 }
 
 //Custom Styles Here
@@ -109,17 +123,17 @@ table.table-api-with-codes {
     		    top: 2px;
     		}
     	}
-    	.type1 {
+    	.http-response-ok {
 			&:before {
 				background: $type1;
 			}
     	}
-    	.type2 {
+    	.http-response-warn {
 			&:before {
 				background: $type2;
 			}
     	}
-    	.type3 {
+    	.http-response-fail {
 			&:before {
 				background: $type3;
 			}
@@ -161,6 +175,7 @@ table.table-api-with-codes {
 		&:first-child {
 			padding-left: 15px;
 			width: 200px;
+			font-weight: bold;
 		}
 		&:last-child {
 			padding-right: 15px;
@@ -198,6 +213,7 @@ table.table-api {
 		&:first-child {
 			padding-left: 15px;
 			width: 200px;
+			font-weight: bold;
 		}
 		&:last-child {
 			padding-right: 15px;
