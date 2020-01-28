@@ -38,12 +38,16 @@ body textarea:required:valid {
 .type-integer {
 	color: $color3;
 }
-.type-object, .type-boolean {
+.type-boolean {
 	color: $color4;
+}
+.type-object {
+	color: $color5;
 }
 .type-array {
 	color: $color1;
 }
+
 .type-description {
 	color: $color4;
 }
