@@ -4,23 +4,36 @@ $(function() {
         $('#sidebar').toggleClass('active');
     });
 
-	$('.table-api tr td').on('click', function (e) {
+	$('.table-api tr').on('click', function (e) {
 		e.preventDefault();
-		$('.table-api tr').removeClass('active');
-        $(this).parent().toggleClass('active');
+		$('.table-api tr').not(this).removeClass('active');
+        $(this).closest('tr').toggleClass('active');
     });
 
-	$('.table-api-with-codes tr td').on('click', function (e) {
+	/*
+	* Collapse/extend all elements in response
+	* */
+	$('.responseCollapse').on('click', function (e) {
+
+		if (this.getAttribute('collapsed') === null) {
+			this.setAttribute('collapsed', 0);
+		}
+
+		let isCollapsed = parseInt(this.getAttribute('collapsed'));
+
+		isCollapsed = Math.abs(isCollapsed - 1);
+
+		let method = isCollapsed ? 'hide' : 'show';
+		let html = isCollapsed
+			? '<i class="fas fa-expand-alt"></i> Expand all'
+			: '<i class="fas fa-compress-alt"></i> Collapse all';
+
+		$('#codesTableContent .nested').collapse(method);
+
+		$(this).html(html);
+
+		this.setAttribute('collapsed', isCollapsed);
+
 		e.preventDefault();
-		$('.table-api tr').removeClass('active');
-        $(this).parent().toggleClass('active');
-    });
-
-	$('.table-api-with-codes .collapseToggle').on('click', function (e) {
-		e.preventDefault();
-		$('.table-api-with-codes tr').removeClass('active');
-    });
-
-
-	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
+	});
 });

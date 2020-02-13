@@ -191,7 +191,6 @@
                                     <div class="d-none">
                                         minLength: 6<br>
                                         pattern: ([a-z]{2})-([A-Z]{2})<br>
-<!--                                        default: en-US-->
                                     </div>
                                 </td>
                                 <td><b>required</b></td>
@@ -204,14 +203,14 @@
                         </h3>
 
                         <table class="table-api-with-codes">
-                            <!--<thead>
+                            <thead>
                             <tr>
                                 <td colspan="2">
-                                    <a href="#" class="collapseToggle"><i class="fas fa-compress-alt"></i> Collapse all</a>
-                                    <a href="#" class="collapseToggle"><i class="fas fa-expand-alt"></i> Expand all</a>
+                                    <a href="" role="button" data-toggle="collapse" data-target=".nested" class="responseCollapse"><i class="fas fa-compress-alt"></i> Collapse all</a>
+                                    <!--<a href="" class="responseCollapse"><i class="fas fa-expand-alt"></i> Expand all</a>-->
                                 </td>
                             </tr>
-                            </thead>-->
+                            </thead>
                             <tbody>
                             <tr>
                                 <td>
@@ -271,7 +270,7 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
-                                                <tr>
+                                                <tr class="nested collapse show">
                                                     <td>last_name</td>
                                                     <td class="type-string">string</td>
                                                     <td class="type-description">
@@ -284,7 +283,7 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
-                                                <tr>
+                                                <tr class="nested collapse show">
                                                     <td>items</td>
                                                     <td class="type-array">array</td>
                                                     <td class="type-description">
@@ -292,7 +291,7 @@
                                                     </td>
                                                     <td class="text-muted">optional</td>
                                                 </tr>
-                                                <tr>
+                                                <tr class="nested collapse show">
                                                     <td>permissions</td>
                                                     <td class="type-object">object</td>
                                                     <td class="type-description">
