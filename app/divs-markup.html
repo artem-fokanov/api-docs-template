@@ -20,6 +20,7 @@
     <link rel="preload" href="fonts/RobotoRegular/RobotoRegular.woff" as="font">
 
     <link rel="stylesheet" href="css/fonts.min.css"/>
+    <link rel="stylesheet" href="css/divs.min.css"/>
     <link rel="stylesheet" href="css/header.min.css"/>
     <link rel="stylesheet" href="css/main.min.css"/>
     <!-- Font awesome -->
@@ -191,6 +192,7 @@
                                     <div class="d-none">
                                         minLength: 6<br>
                                         pattern: ([a-z]{2})-([A-Z]{2})<br>
+<!--                                        default: en-US-->
                                     </div>
                                 </td>
                                 <td><b>required</b></td>
@@ -205,9 +207,8 @@
                         <table class="table-api-with-codes">
                             <thead>
                             <tr>
-                                <td colspan="2">
-                                    <a id="responseCollapse" href="" role="button" data-toggle="collapse" data-target=".nested"><i class="fas fa-compress-alt"></i> Collapse all</a>
-                                    <!--<a href="" class="responseCollapse"><i class="fas fa-expand-alt"></i> Expand all</a>-->
+                                <td colspan="2" class="text-right">
+                                    <a id="responseCollapse" role="button" data-toggle="collapse" data-target=".nested"><i class="fas fa-compress-alt"></i> Collapse all</a>
                                 </td>
                             </tr>
                             </thead>
@@ -244,63 +245,86 @@
                                 <td>
                                     <div class="tab-content" id="codesTableContent">
                                         <div class="tab-pane fade show active" id="type1" role="tabpanel" aria-labelledby="http-code-200">
-                                            <table class="table-api table-borderless">
-                                                <tbody>
-                                                <tr>
-                                                    <td>id</td>
-                                                    <td class="type-integer">integer</td>
-                                                    <td class="type-description">
-                                                        User ID (UID)
-                                                        <div class="d-none">
-                                                            Text to show after click on td
-                                                        </div>
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>first_name</td>
-                                                    <td class="type-string">string</td>
-                                                    <td class="type-description">
-                                                        First Name
-                                                        <div class="d-none">
-                                                            minLength: 2<br>
-                                                            pattern: ([a-z]{2})-([A-Z]{2})<br>
-                                                            default: en-US
-                                                        </div>
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="nested collapse show">
-                                                    <td>last_name</td>
-                                                    <td class="type-string">string</td>
-                                                    <td class="type-description">
-                                                        Last Name
-                                                        <div class="d-none">
-                                                            minLength: 2<br>
-                                                            pattern: ([a-z]{2})-([A-Z]{2})<br>
-                                                            default: en-US
-                                                        </div>
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr class="nested collapse show">
-                                                    <td>items</td>
-                                                    <td class="type-array">array</td>
-                                                    <td class="type-description">
-                                                        Item ID's
-                                                    </td>
-                                                    <td class="text-muted">optional</td>
-                                                </tr>
-                                                <tr class="nested collapse show">
-                                                    <td>permissions</td>
-                                                    <td class="type-object">object</td>
-                                                    <td class="type-description">
-                                                        User permissions
-                                                    </td>
-                                                    <td class="text-muted">optional</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+                                            <div class="row root">
+                                                <div class="col-12">
+<!--                                                    <i class="fas fa-caret-down"></i>-->
+                                                    <span class="type-object">object</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+<!--                                                <div class=""><i class="fas fa-caret-down"></i></div>-->
+                                                <div class="col-3">id</div>
+                                                <div class="col-3 type-string">string</div>
+                                                <div class="col-3 type-description">
+                                                    UID
+                                                    <div class="d-none">
+                                                        Text to show after click on div
+                                                    </div>
+                                                </div>
+                                                <div class="col-3"></div>
+                                            </div>
+
+                                            <div class="row">
+<!--                                                <div class=""><i class="fas fa-caret-down"></i></div>-->
+                                                <div class="col-3">fullname</div>
+                                                <div class="col-3 type-string">string</div>
+                                                <div class="col-3 type-description">Full name</div>
+                                                <div class="col-3"></div>
+                                            </div>
+
+                                            <div class="row collapse show" data-toggle="collapse" data-target="*[data-toggle-group='001']">
+<!--                                                <div class=""><i class="fas fa-caret-down"></i></div>-->
+                                                <div class="col-3">items</div>
+                                                <div class="col-3 type-array">array</div>
+                                                <div class="col-3 type-description">Items</div>
+                                                <div class="col-3 text-muted"></div>
+                                            </div>
+                                            <div class="row nested nested-1 сollapse show" data-toggle-group="001">
+                                                <div class="col-3">item ID1</div>
+                                                <div class="col-3 type-integer">integer</div>
+                                                <div class="col-3 type-description">Size</div>
+                                                <div class="col-3 text-muted">optional</div>
+                                            </div>
+                                            <div class="row nested nested-1 сollapse show" data-toggle-group="001">
+                                                <div class="col-3">item ID2</div>
+                                                <div class="col-3 type-float">float</div>
+                                                <div class="col-3 type-description">Floatvalue</div>
+                                                <div class="col-3 text-muted">optional</div>
+                                            </div>
+                                            <div class="row nested nested-1 сollapse show" data-toggle-group="001">
+                                                <div class="col-3">item ID3</div>
+                                                <div class="col-3 type-integer">integer</div>
+                                                <div class="col-3 type-description">integer</div>
+                                                <div class="col-3 text-muted">optional</div>
+                                            </div>
+
+                                            <div class="row collapse show" data-toggle="collapse" data-target="*[data-toggle-group='002']">
+<!--                                                <div class=""><i class="fas fa-caret-down"></i></div>-->
+                                                <div class="col-3">image_property</div>
+                                                <div class="col-3 type-object">object</div>
+                                                <div class="col-3 type-description">User permissions</div>
+                                                <div class="col-3 text-muted">optional</div>
+                                            </div>
+                                            <div class="row nested nested-1 сollapse show" data-toggle-group="002">
+                                                <div class="col-3">size</div>
+                                                <div class="col-3 type-integer">integer</div>
+                                                <div class="col-3 type-description">Size</div>
+                                                <div class="col-3 text-muted">optional</div>
+                                            </div>
+                                            <div class="row nested nested-1 сollapse show" data-toggle-group="002">
+                                                <div class="col-3">text</div>
+                                                <div class="col-3 type-string">string</div>
+                                                <div class="col-3 type-description">Text grants</div>
+                                                <div class="col-3 text-muted">optional</div>
+                                            </div>
+
+                                            <div class="row py-1 text-left">
+                                                <div class="col">age</div>
+                                                <div class="col type-integer">integer</div>
+                                                <div class="col type-description">User age</div>
+                                                <div class="col"><b>mandatory</b></div>
+                                            </div>
                                         </div>
 
                                         <div class="tab-pane fade" id="type2" role="tabpanel" aria-labelledby="http-code-300">

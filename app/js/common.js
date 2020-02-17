@@ -13,7 +13,17 @@ $(function() {
 	/*
 	* Collapse/extend all elements in response
 	* */
-	$('.responseCollapse').on('click', function (e) {
+	$('.nested')
+		.on('hidden.bs.collapse', function (event) {
+			if ('responseCollapse' === event.target.id)
+				$('#responseCollapse').html('<i class="fas fa-expand-alt"></i> Expand all');
+		})
+		.on('shown.bs.collapse', function (event) {
+			if ('responseCollapse' === event.target.id)
+				$('#responseCollapse').html('<i class="fas fa-compress-alt"></i> Collapse all');
+		});
+
+	$('#responseCollapse').on('click', function (e) {
 
 		if (this.getAttribute('collapsed') === null) {
 			this.setAttribute('collapsed', 0);

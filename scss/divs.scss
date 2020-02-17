@@ -1,0 +1,27 @@
+// based on bootstrap grid layout
+#type1 {
+	> div.root {
+		padding-left: 0;
+	}
+
+	> div {
+		padding: 5px 30px 0;
+		margin-left: -8px;
+
+		> div.first-child {
+			font-weight: bold;
+		}
+	}
+
+	> div:nth-child(2n) {
+		background: #f9f9f9;
+	}
+
+	// For every nested row into column making left padding. Generating totally 4 levels
+	@for $i from 1 through 4 {
+		> div.nested-#{$i} div:first-child {
+			padding-left: $i * 30px;
+		}
+	}
+}
+
