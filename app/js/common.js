@@ -46,4 +46,7 @@ $(function() {
 
 		e.preventDefault();
 	});
+
+	// Bootstrap tooltips
+	$('[data-toggle="tooltip"]').tooltip();
 });
