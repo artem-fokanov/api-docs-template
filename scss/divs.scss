@@ -23,5 +23,9 @@
 			padding-left: $i * 30px;
 		}
 	}
+
+	[data-toggle] {
+		cursor: pointer;
+	}
 }
 
